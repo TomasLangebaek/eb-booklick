@@ -1,3 +1,15 @@
 from django.db import models
 
-# Create your models here.
+class Content(models.Model):
+    title = models.CharField(
+        max_length = 50,
+        null = False
+    )
+    description = models.TextField(
+        blank = True,
+        null = True,
+    )
+    #Falta agregar asociación a usuario: author FK?
+    #Falta agregar relación a tags: tags, ManyToMany?
+    def __str__(self):
+        return self.title + ' by author: ' + self.author + ' w/ id: ' + id
