@@ -3,24 +3,24 @@ from django.db import models
 class User(models.Model): #Creo que falta crear herencia a usuario default de django
     name = models.CharField(
         max_length = 50,
-        null = False
+        null = True
     )
     last_name = models.CharField(
         max_length = 50,
-        null = False
+        null = True
     )
     username = models.CharField(
         max_length = 60,
-        null = False,
+        null = True,
         unique = True
     )
     password = models.CharField(
         max_length = 50,
-        null = False,
-        blank = False
+        null = True,
+        blank = True
     )
     email = models.EmailField(
-        null = False
+        null = True
     )
     university = models.ForeignKey( University,
         on_delete = models.CASCADE
@@ -35,17 +35,17 @@ class User(models.Model): #Creo que falta crear herencia a usuario default de dj
 class Professor(User):
     materia = models.CharField(
         max_length = 50,
-        null = False
+        null = True
     )
     
 class Student(User):
     semester = models.PositiveSmallIntegerField(
         default = 1,
-        null = False
+        null = True
     )
     major = models.CharField(
         max_length = 60,
-        null = False
+        null = True
     )
     second_major = models.CharField(
         max_length = 60,
@@ -55,5 +55,5 @@ class Student(User):
 class Administrator(User):
     role = models.CharField(
         max_length = 60,
-        null = False
+        null = True
     )

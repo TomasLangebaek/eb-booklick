@@ -4,7 +4,7 @@ from users.models import User
 class Booklist(models.Model):
     name = models.CharField(
         max_length = 50,
-        null = False
+        null = True
     )
     description = models.TextField(
         blank = True,
