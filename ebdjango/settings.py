@@ -25,7 +25,7 @@ SECRET_KEY = 'msijak**37d0r)+x2pr8@1(wrb6!log*m2k=v=r#akzqcx#u2n'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['django-env.eba-abhcbxaz.us-east-1.elasticbeanstalk.com']
+ALLOWED_HOSTS = ['django-env.eba-abhcbxaz.us-east-1.elasticbeanstalk.com', '127.0.0.1']
 
 
 # Application definition
@@ -37,6 +37,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'users',
+    'universities',
+    'tags',
+    'booklists',
+    'content'
 
 ]
 

@@ -1,48 +1,52 @@
 from django.db import models
+from universities.models import University
 
 class User(models.Model): #Creo que falta crear herencia a usuario default de django
     name = models.CharField(
         max_length = 50,
-        null = False
+        null = True
     )
     last_name = models.CharField(
         max_length = 50,
-        null = False
+        null = True
     )
     username = models.CharField(
         max_length = 60,
-        null = False,
+        null = True,
         unique = True
     )
     password = models.CharField(
         max_length = 50,
-        null = False,
-        blank = False
+        null = True,
+        blank = True
     )
     email = models.EmailField(
-        null = False
+        null = True
+    )
+    university = models.ForeignKey( University,
+        on_delete = models.CASCADE
     )
     #Falta agregar relación a universidad: university: FK ?
     #Falta agregar relación a contenido: content, FK ?
     #Falta agregar relación a los tags: tags, ManyToMany
     
     def __str__(self):
-        return self.username + ' w/ id: ' + id
+        return str(self.username) + ' w/ id: ' + str(id)
 
 class Professor(User):
     materia = models.CharField(
         max_length = 50,
-        null = False
+        null = True
     )
     
 class Student(User):
     semester = models.PositiveSmallIntegerField(
         default = 1,
-        null = False
+        null = True
     )
     major = models.CharField(
         max_length = 60,
-        null = False
+        null = True
     )
     second_major = models.CharField(
         max_length = 60,
@@ -52,5 +56,5 @@ class Student(User):
 class Administrator(User):
     role = models.CharField(
         max_length = 60,
-        null = False
+        null = True
     )
