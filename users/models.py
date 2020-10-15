@@ -22,6 +22,9 @@ class User(models.Model): #Creo que falta crear herencia a usuario default de dj
     email = models.EmailField(
         null = False
     )
+    university = models.ForeignKey( University,
+        on_delete = models.CASCADE
+    )
     #Falta agregar relación a universidad: university: FK ?
     #Falta agregar relación a contenido: content, FK ?
     #Falta agregar relación a los tags: tags, ManyToMany
