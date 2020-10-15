@@ -10,4 +10,4 @@ class University(models.Model):
         null = True
     )
     def __str__(self):
-        return self.name + ' w/ id: ' +  id
+        return str(self.name) + ' w/ id: ' +  str(id)

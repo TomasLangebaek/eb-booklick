@@ -1,4 +1,5 @@
 from django.db import models
+from universities.models import University
 
 class User(models.Model): #Creo que falta crear herencia a usuario default de django
     name = models.CharField(
@@ -30,7 +31,7 @@ class User(models.Model): #Creo que falta crear herencia a usuario default de dj
     #Falta agregar relación a los tags: tags, ManyToMany
     
     def __str__(self):
-        return self.username + ' w/ id: ' + id
+        return str(self.username) + ' w/ id: ' + str(id)
 
 class Professor(User):
     materia = models.CharField(
