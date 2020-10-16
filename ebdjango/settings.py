@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'universities',
     'tags',
     'booklists',
-    'content'
+    'content',
+    'django_seed'
 
 ]
 

@@ -1,7 +1,8 @@
 from django.db import models
 from universities.models import University
 
-class User(models.Model): #Creo que falta crear herencia a usuario default de django
+class User(models.Model):
+    #Creo que falta crear herencia a usuario default de django
     name = models.CharField(
         max_length = 50,
         null = True
