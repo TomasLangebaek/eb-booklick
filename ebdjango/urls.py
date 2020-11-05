@@ -15,9 +15,16 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-
+from users import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('users/', include('users.urls'))
+    path('users/', include('users.urls')),
+    path('user/', views.get_user, name='userDetail'),
+    path('list/', views.get_users_list, name='usersList'),
+    path('', views.index),
+    path('dashboard', views.dashboard),
+    path('logout', views.logout),
+    path('', include('django.contrib.auth.urls')),
+    path('', include('social_django.urls')),
 ]

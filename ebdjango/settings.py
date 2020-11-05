@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     'tags',
     'booklists',
     'content',
-    'django_seed'
+    'django_seed',
+    'social_django',
 
 ]
 
@@ -126,3 +127,25 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = 'static'
+
+
+LOGIN_URL = "/login/auth0"
+LOGIN_REDIRECT_URL = "/dashboard"
+LOGOUT_REDIRECT_URL = "https://isis2503-tomaslangebaek.us.auth0.com/v2/logout?returnTo=http%3A%2F%2F127.0.0.1:8000"
+
+SOCIAL_AUTH_TRAILING_SLASH = False  # Remove end slash from routes
+SOCIAL_AUTH_AUTH0_DOMAIN = 'isis2503-tomaslangebaek.us.auth0.com'
+SOCIAL_AUTH_AUTH0_KEY = 'G0ps1Iezj8IJ0VYZjP8uYITvE9c7dqbY'
+SOCIAL_AUTH_AUTH0_SECRET = 'DKyggHM3Vq-xEudw6U92ICxaTaO38Z7-5Sg7KikwiGEwUuaXbDoBNS56knmVxW86'
+
+SOCIAL_AUTH_AUTH0_SCOPE = [
+    'openid',
+    'profile',
+]
+
+AUTHENTICATION_BACKENDS = {
+    'ebdjango.auth0backend.Auth0',
+    'django.contrib.auth.backends.ModelBackend',
+}
+
+
