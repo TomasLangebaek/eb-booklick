@@ -1,7 +1,8 @@
 from django.db import models
 from universities.models import University
+from django.contrib.auth.models import AbstractUser
 
-class User(models.Model):
+class Users(AbstractUser):
     #Creo que falta crear herencia a usuario default de django
     name = models.CharField(
         max_length = 50,
@@ -24,9 +25,13 @@ class User(models.Model):
     email = models.EmailField(
         null = True
     )
-    university = models.ForeignKey( University,
-        on_delete = models.CASCADE
+    edad = models.PositiveSmallIntegerField(
+        default = 10
     )
+    #university = models.ForeignKey( University,
+    #    on_delete = models.CASCADE,
+    #    default = 1,
+    #)
     #Falta agregar relación a universidad: university: FK ?
     #Falta agregar relación a contenido: content, FK ?
     #Falta agregar relación a los tags: tags, ManyToMany
@@ -34,13 +39,13 @@ class User(models.Model):
     def __str__(self):
         return str(self.username) + ' w/ id: ' + str(id)
 
-class Professor(User):
+class Professor(Users):
     materia = models.CharField(
         max_length = 50,
         null = True
     )
     
-class Student(User):
+class Student(Users):
     semester = models.PositiveSmallIntegerField(
         default = 1,
         null = True
@@ -54,7 +59,7 @@ class Student(User):
         null = True
     )
 
-class Administrator(User):
+class Administrator(Users):
     role = models.CharField(
         max_length = 60,
         null = True
