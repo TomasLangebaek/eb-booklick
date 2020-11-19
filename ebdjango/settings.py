@@ -25,7 +25,7 @@ SECRET_KEY = 'msijak**37d0r)+x2pr8@1(wrb6!log*m2k=v=r#akzqcx#u2n'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['django-env.eba-abhcbxaz.us-east-1.elasticbeanstalk.com', '127.0.0.1']
+ALLOWED_HOSTS = ['django-env.eba-fwpedn3m.us-east-1.elasticbeanstalk.com']
 
 
 # Application definition
@@ -131,7 +131,7 @@ STATIC_ROOT = 'static'
 
 LOGIN_URL = "/login/auth0"
 LOGIN_REDIRECT_URL = "/dashboard"
-LOGOUT_REDIRECT_URL = "https://isis2503-tomaslangebaek.us.auth0.com/v2/logout?returnTo=http%3A%2F%2F127.0.0.1:8000"
+LOGOUT_REDIRECT_URL = "https://isis2503-tomaslangebaek.us.auth0.com/v2/logout?returnTo=http%3A%2F%2Fdjango-env.eba-fwpedn3m.us-east-1.elasticbeanstalk.com"
 
 SOCIAL_AUTH_TRAILING_SLASH = False  # Remove end slash from routes
 SOCIAL_AUTH_AUTH0_DOMAIN = 'isis2503-tomaslangebaek.us.auth0.com'
