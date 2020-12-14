@@ -28,6 +28,11 @@ class Users(AbstractUser):
     edad = models.PositiveSmallIntegerField(
         default = 10
     )
+    genero = models.CharField(
+        max_length = 60,
+        null = True,
+        unique = True
+    )
     #university = models.ForeignKey( University,
     #    on_delete = models.CASCADE,
     #    default = 1,
