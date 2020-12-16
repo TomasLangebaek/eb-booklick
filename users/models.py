@@ -33,13 +33,11 @@ class Users(AbstractUser):
         null = True,
         unique = True
     )
-    #university = models.ForeignKey( University,
-    #    on_delete = models.CASCADE,
-    #    default = 1,
-    #)
-    #Falta agregar relación a universidad: university: FK ?
-    #Falta agregar relación a contenido: content, FK ?
-    #Falta agregar relación a los tags: tags, ManyToMany
+    codigo = models.CharField(
+        max_length = 60,
+        null = True,
+        unique = True
+    )
     
     def __str__(self):
         return str(self.username) + ' w/ id: ' + str(id)
