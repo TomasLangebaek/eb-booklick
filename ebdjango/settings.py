@@ -25,7 +25,7 @@ SECRET_KEY = 'msijak**37d0r)+x2pr8@1(wrb6!log*m2k=v=r#akzqcx#u2n'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['django-env.eba-fwpedn3m.us-east-1.elasticbeanstalk.com', '127.0.0.1']
+ALLOWED_HOSTS = ['django-env.eba-fwpedn3m.us-east-1.elasticbeanstalk.com', '127.0.0.1','ec2-54-172-180-184.compute-1.amazonaws.com','ec2-3-88-236-146.compute-1.amazonaws.com']
 
 
 # Application definition
@@ -147,5 +147,6 @@ AUTHENTICATION_BACKENDS = {
     'ebdjango.auth0backend.Auth0',
     'django.contrib.auth.backends.ModelBackend',
 }
+
 
 
